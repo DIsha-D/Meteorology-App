@@ -51,6 +51,7 @@ body {
     width: calc(100% - 100px);
   }
   
+  
   button:hover {
     background: #7c7c7c86;
   }

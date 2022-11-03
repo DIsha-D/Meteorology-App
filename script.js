@@ -29,8 +29,14 @@ let weather = {
       document.querySelector(".humidity").innerText = "Humidity: " + humidity + "%";
       document.querySelector(".wind").innerText = "Wind speed: " + speed + " km/h";
       document.querySelector(".weather").classList.remove("loading");
-      date.setDate (date.getDate() + 0);
-      document.getElementById("date").innerHTML = "🕒" + date;
+      
+      const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+      const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+      const d = new Date();
+      let month = months[d.getMonth()];
+      let day = days[d.getDay()];
+      document.getElementById("date").innerHTML = "📅   " + day+",  "+ d.getDate() +' '+month+" "+d.getFullYear()+"  <br>  "+"🕒   "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+" (IST)";
+    
     },
     search: function () {
       this.fetchWeather(document.querySelector(".search-bar").value);
