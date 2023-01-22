@@ -1,3 +1,4 @@
+
 let weather = {
     apiKey: "4ae30463b0ed1c32c22fcaebca09eb94",
     fetchWeather: function (city) {
@@ -43,6 +44,8 @@ let weather = {
     },
   };
   
+
+  
   document.querySelector(".search button").addEventListener("click", function () {
     weather.search();
   });
@@ -55,4 +58,6 @@ let weather = {
       }
     });
   
- weather.fetchWeather("Delhi");
+ weather.fetchWeather("Bengaluru");
+
+
