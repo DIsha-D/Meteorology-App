@@ -36,7 +36,9 @@ let weather = {
       const d = new Date();
       let month = months[d.getMonth()];
       let day = days[d.getDay()];
-      document.getElementById("date").innerHTML = "📅   " + day+",  "+ d.getDate() +' '+month+" "+d.getFullYear()+"  <br>  "+"🕒   "+d.getHours()+":"+d.getMinutes()+":"+d.getSeconds()+" (IST)";
+      var hours = d.getHours() % 12 || 12;
+      var amOrPm = d.getHours() < 12 ? "AM" : "PM";
+      document.getElementById("date").innerHTML = "📅   " + day+",  "+ d.getDate() +' '+month+" "+d.getFullYear()+"  <br>  "+"🕒   "+hours + ":" + d.getMinutes() +  " " + amOrPm + " (IST)";
     
     },
     search: function () {
@@ -45,7 +47,6 @@ let weather = {
   };
   
 
-  
   document.querySelector(".search button").addEventListener("click", function () {
     weather.search();
   });
