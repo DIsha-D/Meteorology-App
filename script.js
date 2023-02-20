@@ -59,6 +59,6 @@ let weather = {
       }
     });
   
- weather.fetchWeather("Bengaluru");
+ weather.fetchWeather("Delhi");
 
 
